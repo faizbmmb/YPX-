@@ -1,0 +1,54 @@
+@using TalentSearch.Core.Datawarehouse
+@using TalentSearch.Web.Models.Configurations
+
+@{
+	tbl_datawarehouse _Data = (tbl_datawarehouse)@ViewData["UserProfileDetail"];
+}
+
+<div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+	<div class="card-header cursor-pointer">
+		<div class="card-title m-0">
+			<h3 class="fw-bold m-0">Certificates</h3>
+		</div>
+	</div>
+	<div class="card-body p-9">
+
+		<div class="row mb-7">
+			<label class="col-lg-4 fw-semibold text-muted">Certificate 1</label>
+			<div class="col-lg-8">
+				<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.cert_1</span>
+			</div>
+		</div>
+		<div class="row mb-7">
+			<label class="col-lg-4 fw-semibold text-muted">Certificate 2</label>
+			<div class="col-lg-8">
+				<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.cert_2</span>
+			</div>
+		</div>
+		<div class="row mb-7">
+			<label class="col-lg-4 fw-semibold text-muted">Certificate 3</label>
+			<div class="col-lg-8">
+				<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.cert_3</span>
+			</div>
+		</div>
+		<div class="row mb-7">
+			<label class="col-lg-4 fw-semibold text-muted">Certificate 4</label>
+			<div class="col-lg-8">
+				<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.cert_4</span>
+			</div>
+		</div>
+		<div class="row mb-7">
+			<label class="col-lg-4 fw-semibold text-muted">Certificate 5</label>
+			<div class="col-lg-8">
+				<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.cert_5</span>
+			</div>
+		</div>
+		<div class="row mb-7">
+			<label class="col-lg-4 fw-semibold text-muted">Certificate 6</label>
+			<div class="col-lg-8">
+				<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.cert_6</span>
+			</div>
+		</div>
+
+	</div>
+</div>

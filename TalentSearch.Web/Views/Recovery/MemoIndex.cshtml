@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Memo Overview";
+    ViewData["TitleHeader"] = "Memo Overview";
+    ViewData["TitleHeaderIcon"] = "ki-focus";
+    ViewData["SubTitleHeader"] = "Recovery";
+    ViewData["SubTitleCurrent"] = "Memo Overview";
+    ViewData["RecoveryIndex"] = "active";
+    Layout = "_MasterPageSideBar";
+}
+
+@section CustomJavascript {
+    <script src="assets/js/custom/utilities/modals/users-search.js"></script>
+    <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
+    <script src="assets/js/custom/talentsearch/internal/scholar-index/tableAppendixA.js?date=@DateTime.Now.ToString("yyyyMMddhhmmss")"></script>
+    <script src="assets/js/custom/talentsearch/internal/scholar-index/memoStatusBox.js"></script>
+}
+
+<div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+    <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+        <div class="d-flex align-items-center gap-2 gap-lg-3">
+        </div>
+    </div>
+</div>
+
+<div id="kt_app_content" class="app-content flex-column-fluid">
+    <div id="kt_app_content_container" class="app-container container-xxl">
+        <div class="card">
+            <div class="card-header border-0 py-6">
+                <div id="statusBoxes" class="d-flex align-items-center justify-content-between">
+                    <div id="appendixAReview" class="statusBox py-6 px-8">
+                        <i class="bi bi-1-circle fs-1"></i>
+                        <h3>Appendix A Review</h3>
+                        <div class="details">
+                            <p>Reviewed By: <span id="nameAReview"></span></p>
+                            <p>Reviewed Date: <span id="dateAReview"></span></p>
+                        </div>
+                    </div>
+                    <i class="bi bi-arrow-right-circle arrow-icon"></i>
+                    <div id="appendixAApproval" class="statusBox py-6 px-8">
+                        <i class="bi bi-2-circle fs-1"></i>
+                        <h3>Appendix A Approval</h3>
+                        <div class="details">
+                            <p>Approved By: <span id="nameAApproval"></span></p>
+                            <p>Approved Date: <span id="dateAApproval"></span></p>
+                        </div>
+                    </div>
+                    <i class="bi bi-arrow-right-circle arrow-icon"></i>
+                    <div id="memoApproval" class="statusBox py-6 px-8">
+                        <i class="bi bi-3-circle fs-1"></i>
+                        <h3>Memo Approval</h3>
+                        <div class="details">
+                            <p>Approved By: <span id="nameMemoApproval"></span></p>
+                            <p>Approved Date: <span id="dateMemoApproval"></span></p>
+                        </div>
+                    </div>
+                    <i class="bi bi-arrow-right-circle arrow-icon"></i>
+                    <div id="issueToScholar" class="statusBox py-6 px-8">
+                        <i class="bi bi-4-circle fs-1"></i>
+                        <h3>Issue to Scholar</h3>
+                        <div class="details">
+                            <p>Issued By: <span id="nameIssueToScholar"></span></p>
+                            <p>Issued Date: <span id="dateIssueToScholar"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body py-8">
+                <partial name="_Partial/_MemoDetails" />
+            </div>
+        </div>
+    </div>
+</div>

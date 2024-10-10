@@ -1,0 +1,47 @@
+@using TalentSearch.Core.Datawarehouse
+@using TalentSearch.Web.Models.Configurations
+
+@{
+	tbl_datawarehouse _Data = (tbl_datawarehouse)@ViewData["UserProfileDetail"];
+}
+
+<div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+	<div class="card-header cursor-pointer">
+		<div class="card-title m-0">
+			<h3 class="fw-bold m-0">Programme Details</h3>
+		</div>
+	</div>
+	<div class="card-body p-9">
+		<div class="row mb-7">
+			<label class="col-lg-4 fw-semibold text-muted">Programme Name</label>
+			<div class="col-lg-8">
+				<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.prog_name</span>
+			</div>
+		</div>
+		<div class="row mb-7">
+			<label class="col-lg-4 fw-semibold text-muted">Programme Status</label>
+			<div class="col-lg-8">
+				<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.programme_status</span>
+			</div>
+		</div>
+		<div class="row mb-7">
+			<label class="col-lg-4 fw-semibold text-muted">Programme Entry</label>
+			<div class="col-lg-8">
+				<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.program_entry</span>
+			</div>
+		</div>
+		<div class="row mb-7">
+			<label class="col-lg-4 fw-semibold text-muted">Thrust</label>
+			<div class="col-lg-8">
+				<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.thrust</span>
+			</div>
+		</div>
+		<div class="row mb-7">
+			<label class="col-lg-4 fw-semibold text-muted">Sub Thrust</label>
+			<div class="col-lg-8">
+				<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.sub_thrust</span>
+			</div>
+		</div>
+
+	</div>
+</div>

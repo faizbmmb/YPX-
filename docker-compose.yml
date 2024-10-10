@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  talentsearch.web.api:
+    image: ${DOCKER_REGISTRY-}talentsearchwebapi
+    build:
+      context: .
+      dockerfile: TalentSearch.Web.API/Dockerfile
+    ports:
+      - "5101:5101"

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "mERGO+KnWkh5XBcHTUVgf/FwCohOUU67cae3PyLVWqM=",
+  "Source": "TalentSearch.Web.API",
+  "BasePath": "_content/TalentSearch.Web.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
