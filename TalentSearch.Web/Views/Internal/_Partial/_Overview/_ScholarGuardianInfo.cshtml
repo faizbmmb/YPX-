@@ -1,0 +1,75 @@
+﻿@using TalentSearch.Core.Datawarehouse
+@using TalentSearch.Web.Models.Configurations
+
+@{
+	tbl_datawarehouse _Data = (tbl_datawarehouse)@ViewData["UserProfileDetail"];
+}
+<div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+	<div class="card-header cursor-pointer">
+		<div class="card-title m-0">
+			<h3 class="fw-bold m-0">Guardian Information</h3>
+		</div>
+	</div>
+	<div class="card-body p-9">
+
+		<div>
+			<div class="card-title mb-7">
+				<h4 class="fw-bold m-0">First Guardian Details</h4>
+			</div>
+			<div class="row mb-7">
+				<label class="col-lg-4 fw-semibold text-muted">Full Name</label>
+				<div class="col-lg-8">
+					<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.sch_guardian1_name</span>
+				</div>
+			</div>
+			<div class="row mb-7">
+				<label class="col-lg-4 fw-semibold text-muted">Malaysian IC Number</label>
+				<div class="col-lg-8">
+					<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.sch_guardian1_newnric</span>
+				</div>
+			</div>
+			<div class="row mb-7">
+				<label class="col-lg-4 fw-semibold text-muted">Type of Occupation</label>
+				<div class="col-lg-8 fv-row">
+					<span class="fw-semibold text-gray-800 fs-6">@_Data.tbl_Scholar.sch_guardian1_type_of_occ</span>
+				</div>
+			</div>
+			<div class="row mb-7">
+				<label class="col-lg-4 fw-semibold text-muted">Employer Name</label>
+				<div class="col-lg-8 fv-row">
+					<span class="fw-semibold text-gray-800 fs-6">@_Data.tbl_Scholar.sch_guardian1_emp_name</span>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div class="card-title mb-7">
+				<h4 class="fw-bold m-0">Second Guardian Details</h4>
+			</div>
+			<div class="row mb-7">
+				<label class="col-lg-4 fw-semibold text-muted">Full Name</label>
+				<div class="col-lg-8">
+					<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.sch_guardian2_name</span>
+				</div>
+			</div>
+			<div class="row mb-7">
+				<label class="col-lg-4 fw-semibold text-muted">Malaysian IC Number</label>
+				<div class="col-lg-8">
+					<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.sch_guardian2_nric</span>
+				</div>
+			</div>
+			<div class="row mb-7">
+				<label class="col-lg-4 fw-semibold text-muted">Type of Occupation</label>
+				<div class="col-lg-8 fv-row">
+					<span class="fw-semibold text-gray-800 fs-6">@_Data.tbl_Scholar.sch_guardian2_type_of_occ</span>
+				</div>
+			</div>
+			<div class="row mb-7">
+				<label class="col-lg-4 fw-semibold text-muted">Employer Name</label>
+				<div class="col-lg-8 fv-row">
+					<span class="fw-semibold text-gray-800 fs-6">@_Data.tbl_Scholar.sch_guardian2_emp_name</span>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

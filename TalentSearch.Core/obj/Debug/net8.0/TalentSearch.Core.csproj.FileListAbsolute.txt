@@ -1,0 +1,13 @@
+C:\Users\muhammad.faiz\Desktop\test\TalentSearch\TalentSearch.Core\bin\Debug\net8.0\TalentSearch.Core.deps.json
+C:\Users\muhammad.faiz\Desktop\test\TalentSearch\TalentSearch.Core\bin\Debug\net8.0\TalentSearch.Core.dll
+C:\Users\muhammad.faiz\Desktop\test\TalentSearch\TalentSearch.Core\bin\Debug\net8.0\TalentSearch.Core.pdb
+C:\Users\muhammad.faiz\Desktop\test\TalentSearch\TalentSearch.Core\obj\Debug\net8.0\TalentSearch.Core.csproj.AssemblyReference.cache
+C:\Users\muhammad.faiz\Desktop\test\TalentSearch\TalentSearch.Core\obj\Debug\net8.0\TalentSearch.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\muhammad.faiz\Desktop\test\TalentSearch\TalentSearch.Core\obj\Debug\net8.0\TalentSearch.Core.AssemblyInfoInputs.cache
+C:\Users\muhammad.faiz\Desktop\test\TalentSearch\TalentSearch.Core\obj\Debug\net8.0\TalentSearch.Core.AssemblyInfo.cs
+C:\Users\muhammad.faiz\Desktop\test\TalentSearch\TalentSearch.Core\obj\Debug\net8.0\TalentSearch.Core.csproj.CoreCompileInputs.cache
+C:\Users\muhammad.faiz\Desktop\test\TalentSearch\TalentSearch.Core\obj\Debug\net8.0\TalentSearch.Core.sourcelink.json
+C:\Users\muhammad.faiz\Desktop\test\TalentSearch\TalentSearch.Core\obj\Debug\net8.0\TalentSearch.Core.dll
+C:\Users\muhammad.faiz\Desktop\test\TalentSearch\TalentSearch.Core\obj\Debug\net8.0\refint\TalentSearch.Core.dll
+C:\Users\muhammad.faiz\Desktop\test\TalentSearch\TalentSearch.Core\obj\Debug\net8.0\TalentSearch.Core.pdb
+C:\Users\muhammad.faiz\Desktop\test\TalentSearch\TalentSearch.Core\obj\Debug\net8.0\ref\TalentSearch.Core.dll

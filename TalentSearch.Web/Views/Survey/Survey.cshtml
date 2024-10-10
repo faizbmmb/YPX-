@@ -1,0 +1,1298 @@
+﻿@{
+    ViewBag.Title = "Survey";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model TalentSearch.Core.Parameters.SurveyParameter
+
+<!--begin::Theme mode setup on page load-->
+<script>var defaultThemeMode = "light"; var themeMode; if (document.documentElement) { if (document.documentElement.hasAttribute("data-bs-theme-mode")) { themeMode = document.documentElement.getAttribute("data-bs-theme-mode"); } else { if (localStorage.getItem("data-bs-theme") !== null) { themeMode = localStorage.getItem("data-bs-theme"); } else { themeMode = defaultThemeMode; } } if (themeMode === "system") { themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; } document.documentElement.setAttribute("data-bs-theme", themeMode); }</script>
+<!--end::Theme mode setup on page load-->
+<!--begin::Root-->
+<div class="d-flex flex-column flex-root" id="kt_app_root">
+    <!--begin::Authentication - Multi-steps-->
+    <div class="d-flex flex-column flex-lg-row flex-column-fluid stepper stepper-pills stepper-column stepper-multistep" id="kt_create_account_stepper">
+        <!--begin::Aside-->
+        <div class="d-flex flex-column flex-lg-row-auto w-lg-450px w-xl-500px">
+            <div class="d-flex flex-column position-lg-fixed top-0 bottom-0 w-lg-450px w-xl-500px scroll-y bgi-size-cover bgi-position-center" style="background-image: url(assets/media/misc/auth-bg-orange.png)">
+                <!--begin::Header-->
+                <div class="d-flex flex-center  px-15 py-15 mt-lg-20">
+                    <!--begin::Logo-->
+                    <a href="#">
+                        <img alt="Logo" src="contents/images/logo_tb_full.svg" class="h-70px" />
+                    </a>
+                    <!--end::Logo-->
+                </div>
+                <!--end::Header-->
+                <!--begin::Body-->
+                <div class="d-flex flex-row-fluid justify-content-center py-10">
+                    <!--begin::Nav-->
+                    <div class="stepper-nav">
+                        <!--begin::Step 1-->
+                        <div class="stepper-item current" data-kt-stepper-element="nav">
+                            <!--begin::Wrapper-->
+                            <div class="stepper-wrapper">
+                                <!--begin::Icon-->
+                                <div class="stepper-icon rounded-3">
+                                    <i class="ki-duotone ki-check fs-2 stepper-check"></i>
+                                    <span class="stepper-number">1</span>
+                                </div>
+                                <!--end::Icon-->
+                                <!--begin::Label-->
+                                <div class="stepper-label">
+                                    <h3 class="stepper-title fs-2">Personal Details</h3>
+                                    <div class="stepper-desc fw-normal">State your personal informations</div>
+                                </div>
+                                <!--end::Label-->
+                            </div>
+                            <!--end::Wrapper-->
+                            <!--begin::Line-->
+                            <div class="stepper-line h-30px"></div>
+                            <!--end::Line-->
+                        </div>
+                        <!--end::Step 1-->
+                        <!--begin::Step 2-->
+                        <div class="stepper-item" data-kt-stepper-element="nav">
+                            <!--begin::Wrapper-->
+                            <div class="stepper-wrapper">
+                                <!--begin::Icon-->
+                                <div class="stepper-icon rounded-3">
+                                    <i class="ki-duotone ki-check fs-2 stepper-check"></i>
+                                    <span class="stepper-number">2</span>
+                                </div>
+                                <!--end::Icon-->
+                                <!--begin::Label-->
+                                <div class="stepper-label">
+                                    <h3 class="stepper-title fs-2">Your Interest</h3>
+                                    <div class="stepper-desc fw-normal">State your interest information</div>
+                                </div>
+                                <!--end::Label-->
+                            </div>
+                            <!--end::Wrapper-->
+                            <!--begin::Line-->
+                            <div class="stepper-line h-30px"></div>
+                            <!--end::Line-->
+                        </div>
+                        <!--end::Step 2-->
+                        <!--begin::Step 3-->
+                        <div class="stepper-item" data-kt-stepper-element="nav">
+                            <!--begin::Wrapper-->
+                            <div class="stepper-wrapper">
+                                <!--begin::Icon-->
+                                <div class="stepper-icon">
+                                    <i class="ki-duotone ki-check fs-2 stepper-check"></i>
+                                    <span class="stepper-number">3</span>
+                                </div>
+                                <!--end::Icon-->
+                                <!--begin::Label-->
+                                <div class="stepper-label">
+                                    <h3 class="stepper-title fs-2">Employment Status</h3>
+                                    <div class="stepper-desc fw-normal">State your employment information</div>
+                                </div>
+                                <!--end::Label-->
+                            </div>
+                            <!--end::Wrapper-->
+                            <!--begin::Line-->
+                            <div class="stepper-line h-30px"></div>
+                            <!--end::Line-->
+                        </div>
+                        <!--end::Step 3-->
+                        <!--begin::Step 4-->
+                        <div class="stepper-item" data-kt-stepper-element="nav">
+                            <!--begin::Wrapper-->
+                            <div class="stepper-wrapper">
+                                <!--begin::Icon-->
+                                <div class="stepper-icon">
+                                    <i class="ki-duotone ki-check fs-2 stepper-check"></i>
+                                    <span class="stepper-number">4</span>
+                                </div>
+                                <!--end::Icon-->
+                                <!--begin::Label-->
+                                <div class="stepper-label">
+                                    <h3 class="stepper-title fs-2">Development Info</h3>
+                                    <div class="stepper-desc fw-normal">State your Development Interest</div>
+                                </div>
+                                <!--end::Label-->
+                            </div>
+                            <!--end::Wrapper-->
+                            <!--begin::Line-->
+                            <div class="stepper-line h-30px"></div>
+                            <!--end::Line-->
+                        </div>
+                        <!--end::Step 4-->
+                        <!--begin::Step 5-->
+                        <div class="stepper-item" data-kt-stepper-element="nav">
+                            <!--begin::Wrapper-->
+                            <div class="stepper-wrapper">
+                                <!--begin::Icon-->
+                                <div class="stepper-icon">
+                                    <i class="ki-duotone ki-check fs-2 stepper-check"></i>
+                                    <span class="stepper-number">5</span>
+                                </div>
+                                <!--end::Icon-->
+                                <!--begin::Label-->
+                                <div class="stepper-label">
+                                    <h3 class="stepper-title fs-2">YPX Event</h3>
+                                    <div class="stepper-desc fw-normal">Submission</div>
+                                </div>
+                                <!--end::Label-->
+                            </div>
+                            <!--end::Wrapper-->
+                        </div>
+                        <!--end::Step 5-->
+                    </div>
+                    <!--end::Nav-->
+                </div>
+                <!--end::Body-->
+                <!--begin::Footer-->
+                <div class="d-flex flex-center flex-wrap px-5 py-10">
+                    <!--begin::Links-->
+                    <div class="d-flex fw-normal">
+                        <center class="text-white">2024 © Yayasan Peneraju</center>
+                    </div>
+                    <!--end::Links-->
+                </div>
+                <!--end::Footer-->
+            </div>
+        </div>
+        <!--begin::Aside-->
+        <!--begin::Body-->
+        <div class="d-flex flex-column flex-lg-row-fluid">
+            <!--begin::Content-->
+            <div class="d-flex flex-center flex-column flex-column-fluid">
+                <!--begin::Wrapper-->
+                <div class="w-lg-650px w-xl-700px p-10 p-lg-15 mx-auto">
+                    <!--begin::Form-->
+                    @using (Html.BeginForm("Survey", "Survey", FormMethod.Post, new { @class = "my-auto pb-5", novalidate = "novalidate", id = "kt_create_account_form" }))
+                    {
+                        <!--begin::Step 1-->
+                        <div class="current" data-kt-stepper-element="content">
+                            <!--begin::Wrapper-->
+                            <div class="w-100">
+                                <!--begin::Heading-->
+                                <div class="pb-10 pb-lg-15">
+                                    <!--begin::Title-->
+                                    <h2 class="fw-bold d-flex align-items-center text-gray-900">
+                                        Personal Details
+                                        <span class="ms-1" data-bs-toggle="tooltip" title="Yayasan Peneraju will utilize your personal details for future reference.">
+                                            <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                            </i>
+                                        </span>
+                                    </h2>
+                                    <!--end::Title-->
+                                    <!--begin::Notice-->
+                                    <div class="text-muted fw-semibold fs-6">
+                                        Fill in your personal details
+                                    </div>
+                                    <!--end::Notice-->
+                                </div>
+                                <!--end::Heading-->
+
+                                <div class="mb-10 fv-row">
+                                    <div class="row mb-2 pb-5 pb-lg-5">
+                                        <label class="form-label required">Full Name</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="ki-outline ki-user text-warning"></i></span>
+                                            @Html.TextBoxFor(model => model.Fullname, new { placeholder = "Full Name", autocomplete = "off", @class = "form-control bg-transparent" })
+                                        </div>
+                                        <div class="form-text">
+                                            Eg: <code>AISYAH BINTI ABDULLAH</code>
+                                        </div>
+                                        @Html.ValidationMessageFor(model => model.Fullname, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="row mb-2 pb-5 pb-lg-5">
+                                        <label class="form-label required">Identification No</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="ki-outline ki-wallet text-warning" "></i></span>
+                                            @Html.TextBoxFor(model => model.IdentityNo, new { placeholder = "Identification No", autocomplete = "off", @class = "form-control bg-transparent" })
+                                        </div>
+                                        <div class="form-text">
+                                            Format with dash (-) Eg: <code>800808-08-0808</code>
+                                        </div>
+                                        @Html.ValidationMessageFor(model => model.IdentityNo, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="row mb-2 pb-5 pb-lg-5">
+                                        <label class="form-label required">Email</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="ki-outline ki-sms text-warning" "></i></span>
+                                            @Html.TextBoxFor(model => model.Email, new { placeholder = "Email", autocomplete = "off", @class = "form-control bg-transparent" })
+                                        </div>
+                                        <div class="form-text">
+                                            Eg: <code>aisyah.abdullah@email.com</code>
+                                        </div>
+                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="row mb-2 pb-5 pb-lg-5">
+                                        <label class="form-label required">Phone No</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="ki-outline ki-phone text-warning"></i></span>
+                                            @Html.TextBoxFor(model => model.PhoneNo, new { placeholder = "Phone (eg: +6019-999999)", autocomplete = "off", @class = "form-control bg-transparent" })
+                                        </div>
+                                        <div class="form-text">
+                                            Eg: <code>+6010-1010000</code>
+                                        </div>
+                                        @Html.ValidationMessageFor(model => model.PhoneNo, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <!--end::Wrapper-->
+                            </div>
+                        </div>
+                        <!--end::Step 1-->
+                        <!--begin::Step 2-->
+                        <div class="" data-kt-stepper-element="content">
+                            <!--begin::Wrapper-->
+                            <div class="w-100">
+                                <!--begin::Heading-->
+                                <div class="pb-10 pb-lg-15">
+                                    <!--begin::Title-->
+                                    <h2 class="fw-bold d-flex align-items-center text-gray-900">
+                                        Choose Your Interest
+                                        <span class="ms-1" data-bs-toggle="tooltip" title="Interest survey based on programme and leadership development initiatives">
+                                            <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                            </i>
+                                        </span>
+                                    </h2>
+                                    <!--end::Title-->
+                                    <!--begin::Notice-->
+                                    <div class="text-muted fw-semibold fs-6">
+                                        Yayasan Peneraju aims to cultivate value creators and future leaders who excel in the global arena. In this spirit, we warmly invite you to participate in our survey.
+                                    </div>
+                                    <!--end::Notice-->
+                                </div>
+                                <!--end::Heading-->
+                                <!-- Begin: Question 1-->
+                                <partial name="SurveyPartial/_Q1" />
+                                <!-- End: Question 1-->
+                                <!-- Begin: Question 2-->
+                                <partial name="SurveyPartial/_Q2" />
+                                <!-- End: Question 2-->
+                            </div>
+                            <!--end::Wrapper-->
+                        </div>
+                        <!--end::Step 2-->
+                        <!--begin::Step 3-->
+                        <div class="" data-kt-stepper-element="content">
+                            <!--begin::Wrapper-->
+                            <div class="w-100">
+                                <!--begin::Heading-->
+                                <div class="pb-10 pb-lg-15">
+                                    <!--begin::Title-->
+                                    <h2 class="fw-bold d-flex align-items-center text-gray-900">
+                                        Development Information
+                                        <span class="ms-1" data-bs-toggle="tooltip" title="Interest survey based on programme and leadership development initiatives">
+                                            <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                            </i>
+                                        </span>
+                                    </h2>
+                                    <!--end::Title-->
+                                    <!--begin::Notice-->
+                                    <div class="text-muted fw-semibold fs-6">
+                                        State your Development Interest
+                                    </div>
+                                    <!--end::Notice-->
+                                </div>
+                                <!--end::Heading-->
+                                <!--begin::Q3-->
+                                <div class="fv-row mb-10 ">
+                                    <!--begin::Label-->
+                                    <span style="font-weight:bold;">QUESTION: </span>
+                                    <label class="d-flex align-items-center form-label mb-3 required">
+                                        What is your current employment status?
+                                        <span class="ms-1" data-bs-toggle="tooltip" title="What is your current employment status?">
+                                            <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                            </i>
+                                        </span>
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Row-->
+                                    <div class="row mb-2" data-kt-buttons="true">
+                                        <!--begin::Row-->
+                                        <div class="row mb-2">
+                                            <select name="Q3" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+                                                <option></option>
+                                                <option value="Student">Student</option>
+                                                <option value="Employed">Employed</option>
+                                                <option value="Self-Employed">Self-Employed</option>
+                                                <option value="Unemployed">Unemployed</option>
+                                            </select>
+                                        </div>
+                                        <!--end::Row-->
+                                    </div>
+                                    <!--end::Row-->
+                                    <!--begin::Hint-->
+                                    @*<div class="form-text">Customers will see this shortened version of your statement descriptor</div>*@
+                                    <!--end::Hint-->
+                                </div>
+                                <!--end::Q3-->
+                                <!--begin::Q4-->
+                                <div class="mb-10 fv-row" style="display: none;" id="FQ4">
+                                    <!--begin::Label-->
+                                    <span style="font-weight:bold;">QUESTION EMPLOYED: </span>
+                                    <label class="d-flex align-items-center form-label mb-3">
+                                        Job level?
+                                        <span class="ms-1" data-bs-toggle="tooltip" title="What is your current employment status?">
+                                            <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                            </i>
+                                        </span>
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Row-->
+                                    <div class="row mb-2">
+                                        <select name="Q4" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+                                            <option></option>
+                                            <option value="Non-Executive">Non-Executive</option>
+                                            <option value="Executive">Executive</option>
+                                            <option value="Middle Management">Middle Management</option>
+                                            <option value="Senior Managers">Senior Managers</option>
+                                            <option value="C-Suite">C-Suite</option>
+                                        </select>
+                                    </div>
+                                    <!--end::Row-->
+                                </div>
+                                <!--end::Q4-->
+                                <!--begin::Q5-->
+                                <div class="mb-10 fv-row" style="display: none;" id="FQ5">
+                                    <!--begin::Label-->
+                                    <span style="font-weight:bold;">QUESTION SELF-EMPLOYED: </span>
+                                    <label class="d-flex align-items-center form-label mb-3">
+                                        Self-Employment Category?
+                                        <span class="ms-1" data-bs-toggle="tooltip" title="Self-Employment Category?">
+                                            <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                            </i>
+                                        </span>
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Row-->
+                                    <div class="row mb-2">
+                                        <select name="Q5" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+                                            <option></option>
+                                            <option value="Founder/Co-Founder (Business established less than 3 years)">Founder/Co-Founder (Business established less than 3 years)</option>
+                                            <option value="Founder/Co-Founder (Business established more than 3 years)">Founder/Co-Founder (Business established more than 3 years)</option>
+                                            <option value="Incubator (Researcher/ Innovator)">Incubator (Researcher/ Innovator)</option>
+                                            <option value="Freelancer">Freelancer</option>
+                                        </select>
+                                    </div>
+                                    <!--end::Row-->
+                                </div>
+                                <!--end::Q5-->
+                                <!--begin::Q6-->
+                                <div class="mb-10 fv-row" style="display: none;" id="FQ6">
+                                    <!--begin::Label-->
+                                    <span style="font-weight:bold;">QUESTION SELF-EMPLOYED: </span>
+                                    <label class="d-flex align-items-center form-label mb-3">
+                                        Industry Category?
+                                        <span class="ms-1" data-bs-toggle="tooltip" title="Industry Category?">
+                                            <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                            </i>
+                                        </span>
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Row-->
+                                    <div class="row mb-2">
+                                        <select name="Q6" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+                                            <option></option>
+                                            <option value="A89B02A5-4BB4-427E-88AE-29011337627B">Accounting / Audit / Tax Services </option>
+                                            <option value="5166FADB-FB12-4E57-8EB9-4CCCB657DBD3">Advertising/Marketing / Promotion / PR </option>
+                                            <option value="4DBB27EC-DF6E-45A7-9C7F-9E1B4E8AFF2E">Aerospace/Aviation </option>
+                                            <option value="1063A502-7775-46F6-AD9A-C671A48FC531">Agricultural/Plantation / Poultry / Fisheries</option>
+                                            <option value="B535640C-0723-4731-A549-97E19B424BDB">Apparel</option>
+                                            <option value="6B9F1559-8DD4-4090-B7F5-125ABB62A7EA">Architectural Services / Interior Designing</option>
+                                            <option value="AB8E0172-18D9-418B-BB51-C7A0AACAA772">Arts / Design / Fashion </option>
+                                            <option value="E7517C04-AB36-464E-965A-EC64625F0A1E">Automobile / Automotive Ancillary / Vehicle</option>
+                                            <option value="99D65F8D-6C85-4E44-B0A7-E2477D34B90E">Banking/Financial Services</option>
+                                            <option value="FDB128B0-3BD1-4C60-988D-66F72FD70E7F">BioTechnology / Pharmaceutical / Clinical research</option>
+                                            <option value="2A9D5482-5054-489F-9CDD-52BB3FDF7A91">Call Center / IT-Enabled Services / BPO</option>
+                                            <option value="E0948349-828F-453A-9AE1-2B70C004DBD3">Chemical/Fertilizers / Pesticides</option>
+                                            <option value="BEA23D9E-D337-4B6A-BFE7-6970C16AB6FD">Computer / Information Technology - Hardware)</option>
+                                            <option value="EEFFAEE8-08CC-4B8B-B7DF-257EC080D16F">Construction / Building / Engineering</option>
+                                            <option value="C0461C63-7A36-412B-AB5E-6CB770BF1872">Consulting - Business & Management </option>
+                                            <option value="411BA10A-1636-495B-8290-6E34D6962453">Consulting - IT, Science, Engineering & Technical </option>
+                                            <option value="E51C4046-A369-449D-9590-22136199AD99">Consumer Products / FMCG </option>
+                                            <option value="7C7259CB-6AC4-428C-BF5F-32A9BABA2BF1">Education </option>
+                                            <option value="701F8F99-92E3-4A46-9F51-DFBB174354FF">Electrical & Electronics </option>
+                                            <option value="6AD4E549-D301-433E-87CB-556E007AD120">Entertainment & Leisure</option>
+                                            <option value="6010289D-6291-47C6-A994-C6E7AC53135E">Food & Beverages </option>
+                                            <option value="4938C7B4-D380-492D-9DE3-094AFF95EB59">GIG Economy </option>
+                                            <option value="3FAB3C67-1EAA-4110-98F8-152482EF6684">Government </option>
+                                            <option value="72161475-1B7E-41D7-BDA8-9EA6E5B72FE5">Healthcare & Pharmaceuticals</option>
+                                            <option value="C9337BE4-3DD9-4FCE-B7F4-16366A8C2138">Hospitality & Events Management </option>
+                                            <option value="BB304744-2749-4AF7-8B0B-3AC963EC2105">Insurance</option>
+                                            <option value="D532AE8F-E668-4AFE-A609-881873D2BEB2">Law</option>
+                                            <option value="FEC83457-5660-4268-B930-889444631766">Manufacturing</option>
+                                            <option value="10348D6A-54CC-4AA1-868B-DD1EB2AC6D13">Real Estate </option>
+                                            <option value="438D306C-5A34-4801-89B7-766DD7837269">Retail</option>
+                                            <option value="66521A36-1467-486A-B8CF-029F03788BA1">Sports & Tourism </option>
+                                            <option value="6E5531FD-7ABB-459A-B9DF-F40223A250CE">Telecommunications, Technology, Internet & Electronics </option>
+                                            <option value="05466264-8CB7-4082-916D-4DD30DC4AC49">Transportation & Delivery </option>
+                                            <option value="764710D7-3567-4269-8713-D043110697AE">Utilities, Energy & Extraction </option>
+                                            <option value="BD201CF8-D7DC-4C92-BD3A-2C45BC9319A1">Other</option>
+                                        </select>
+                                    </div>
+                                    <!--end::Row-->
+                                </div>
+                                <!--end::Q6-->
+                                <!--begin::Q7-->
+                                <div class="mb-10 fv-row"  style="display: none;" id="FQ7">
+                                    <!--begin::Label-->
+                                    <span style="font-weight:bold;">QUESTION EMPLOYED: </span>
+                                    <label class="d-flex align-items-center form-label mb-3">
+                                        Total number of years working experience?
+                                        <span class="ms-1" data-bs-toggle="tooltip" title="Total number of years working experience?">
+                                            <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                            </i>
+                                        </span>
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Row-->
+                                    <div class="row mb-2">
+                                        <select name="Q7" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+                                            <option></option>
+                                            <option value='Less than 1 year'>Less than 1 year</option>
+                                            <option value='1 to 3 years'>1 to 3 years</option>
+                                            <option value='3 to 5 years'>3 to 5 years</option>
+                                            <option value='5 to 10 years'>5 to 10 years</option>
+                                            <option value='More than 10 years'>More than 10 years</option>
+                                        </select>
+                                    </div>
+                                    <!--end::Row-->
+                                </div>
+                                <!--end::Q7-->
+                                <!--begin::Q8-->
+                                <div class="mb-10 fv-row"  style="display: none;" id="FQ8">
+                                    <!--begin::Label-->
+                                    <span style="font-weight:bold;">QUESTION EMPLOYED: </span>
+                                    <label class="d-flex align-items-center form-label mb-3">
+                                       What type of organisation you are currently being employed in?
+                                        <span class="ms-1" data-bs-toggle="tooltip" title="What type of organisation you are currently being employed in?">
+                                            <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                            </i>
+                                        </span>
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Row-->
+                                    <div class="row mb-2">
+                                        <select name="Q8" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+                                            <option></option>
+                                            <option value='Government'>Government</option>
+                                            <option value='Government agency'>Government agency</option>
+                                            <option value='MNC'>MNC</option>
+                                            <option value='Private company'>Private company</option>
+                                            <option value='Statutory body'>Statutory body</option>
+                                            <option value='NGO non profit'>NGO or non-profit</option>
+                                            <option value='Educational institution'>Educational institution</option>
+                                            <option value='Social enterprise'>Social enterprise</option>
+                                        </select>
+                                    </div>
+                                    <!--end::Row-->
+                                </div>
+                                <!--end::Q8---->
+                                <!--begin::Q8_1-->
+                                <div class="mb-10 fv-row" style="display: none;" id="FQ8_1">
+                                    <!--begin::Label-->
+                                    <span style="font-weight:bold;">QUESTION SELF-EMPLOYED: </span>
+                                    <label class="d-flex align-items-center form-label mb-3">
+                                        What type of organisation you are currently being employed in?
+                                        <span class="ms-1" data-bs-toggle="tooltip" title="Self-Employment Categoryyy?">
+                                            <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                            </i>
+                                        </span>
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Row-->
+                                    <div class="row mb-2">
+                                        <select name="Q8_1" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+                                            <option></option>
+                                            <option value="one">Founder/Co-Founder (Business established less than 3 years)</option>
+                                            <option value="two">Founder/Co-Founder (Business established more than 3 years)</option>
+                                            <option value="three">Incubator (Researcher/ Innovator)</option>
+                                            <option value="four">Freelancer</option>
+                                        </select>
+                                    </div>
+                                    <!--end::Row-->
+                                </div>
+                                <!--end::Q8_1-->
+                                <!--begin::Q9-->
+                                <div class="mb-10 fv-row" style="display: none;" id="FQ9">
+                                    <!--begin::Label-->
+                                    <span style="font-weight:bold;">QUESTION EMPLOYED: </span>
+                                    <label class="d-flex align-items-center form-label mb-3">
+                                        Which of the following best describes the industry of your current company?
+                                        <span class="ms-1" data-bs-toggle="tooltip" title="Which of the following best describes the industry of your current company?">
+                                            <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                            </i>
+                                        </span>
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Row-->
+                                    <div class="row mb-2">
+                                        <select name="Q9" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+                                            <option></option>
+                                            <option value="A89B02A5-4BB4-427E-88AE-29011337627B">Accounting / Audit / Tax Services </option>
+                                            <option value="5166FADB-FB12-4E57-8EB9-4CCCB657DBD3">Advertising/Marketing / Promotion / PR </option>
+                                            <option value="4DBB27EC-DF6E-45A7-9C7F-9E1B4E8AFF2E">Aerospace/Aviation </option>
+                                            <option value="1063A502-7775-46F6-AD9A-C671A48FC531">Agricultural/Plantation / Poultry / Fisheries</option>
+                                            <option value="B535640C-0723-4731-A549-97E19B424BDB">Apparel</option>
+                                            <option value="6B9F1559-8DD4-4090-B7F5-125ABB62A7EA">Architectural Services / Interior Designing</option>
+                                            <option value="AB8E0172-18D9-418B-BB51-C7A0AACAA772">Arts / Design / Fashion </option>
+                                            <option value="E7517C04-AB36-464E-965A-EC64625F0A1E">Automobile / Automotive Ancillary / Vehicle</option>
+                                            <option value="99D65F8D-6C85-4E44-B0A7-E2477D34B90E">Banking/Financial Services</option>
+                                            <option value="FDB128B0-3BD1-4C60-988D-66F72FD70E7F">BioTechnology / Pharmaceutical / Clinical research</option>
+                                            <option value="2A9D5482-5054-489F-9CDD-52BB3FDF7A91">Call Center / IT-Enabled Services / BPO</option>
+                                            <option value="E0948349-828F-453A-9AE1-2B70C004DBD3">Chemical/Fertilizers / Pesticides</option>
+                                            <option value="BEA23D9E-D337-4B6A-BFE7-6970C16AB6FD">Computer / Information Technology - Hardware)</option>
+                                            <option value="EEFFAEE8-08CC-4B8B-B7DF-257EC080D16F">Construction / Building / Engineering</option>
+                                            <option value="C0461C63-7A36-412B-AB5E-6CB770BF1872">Consulting - Business & Management </option>
+                                            <option value="411BA10A-1636-495B-8290-6E34D6962453">Consulting - IT, Science, Engineering & Technical </option>
+                                            <option value="E51C4046-A369-449D-9590-22136199AD99">Consumer Products / FMCG </option>
+                                            <option value="7C7259CB-6AC4-428C-BF5F-32A9BABA2BF1">Education </option>
+                                            <option value="701F8F99-92E3-4A46-9F51-DFBB174354FF">Electrical & Electronics </option>
+                                            <option value="6AD4E549-D301-433E-87CB-556E007AD120">Entertainment & Leisure</option>
+                                            <option value="6010289D-6291-47C6-A994-C6E7AC53135E">Food & Beverages </option>
+                                            <option value="4938C7B4-D380-492D-9DE3-094AFF95EB59">GIG Economy </option>
+                                            <option value="3FAB3C67-1EAA-4110-98F8-152482EF6684">Government </option>
+                                            <option value="72161475-1B7E-41D7-BDA8-9EA6E5B72FE5">Healthcare & Pharmaceuticals</option>
+                                            <option value="C9337BE4-3DD9-4FCE-B7F4-16366A8C2138">Hospitality & Events Management </option>
+                                            <option value="BB304744-2749-4AF7-8B0B-3AC963EC2105">Insurance</option>
+                                            <option value="D532AE8F-E668-4AFE-A609-881873D2BEB2">Law</option>
+                                            <option value="FEC83457-5660-4268-B930-889444631766">Manufacturing</option>
+                                            <option value="10348D6A-54CC-4AA1-868B-DD1EB2AC6D13">Real Estate </option>
+                                            <option value="438D306C-5A34-4801-89B7-766DD7837269">Retail</option>
+                                            <option value="66521A36-1467-486A-B8CF-029F03788BA1">Sports & Tourism </option>
+                                            <option value="6E5531FD-7ABB-459A-B9DF-F40223A250CE">Telecommunications, Technology, Internet & Electronics </option>
+                                            <option value="05466264-8CB7-4082-916D-4DD30DC4AC49">Transportation & Delivery </option>
+                                            <option value="764710D7-3567-4269-8713-D043110697AE">Utilities, Energy & Extraction </option>
+                                            <option value="BD201CF8-D7DC-4C92-BD3A-2C45BC9319A1">Other</option>
+                                        </select>
+                                    </div>
+                                    <!--end::Row-->
+                                </div>
+                                <!--end::Q9-->
+                            </div>
+                            <!--end::Wrapper-->
+                        </div>
+                        <!--end::Step 3-->
+                        <!--begin::Step 4-->
+                        <div class="" data-kt-stepper-element="content">
+                            <!--begin::Wrapper-->
+                            <div class="w-100">
+                                <!--begin::Heading-->
+                                <div class="pb-10 pb-lg-15">
+                                    <!--begin::Title-->
+                                    <h2 class="fw-bold d-flex align-items-center text-gray-900">
+                                        Development Info
+                                        <span class="ms-1" data-bs-toggle="tooltip" title="Interest survey based on programme and leadership development initiatives">
+                                            <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                            </i>
+                                        </span>
+                                    </h2>
+                                    <!--end::Title-->
+                                    <!--begin::Notice-->
+                                    <div class="text-muted fw-semibold fs-6">
+                                        Provide your development information
+                                    </div>
+                                    <!--end::Notice-->
+                                </div>
+                                <!--end::Heading-->
+                                <!--begin::Q10-->
+                                <div class="fv-row mb-10 ">
+                                    <!--begin::Label-->
+                                    <span style="font-weight:bold;">QUESTION: </span>
+                                    <label class="d-flex align-items-center form-label mb-3 required">
+                                       In which area of Leadership are you interested in developing yourself?
+                                        <span class="ms-1" data-bs-toggle="tooltip" title="In which area of Leadership are you interested in developing yourself?">
+                                            <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                            </i>
+                                        </span>
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Row-->
+                                    <div class="row mb-2" data-kt-buttons="true">
+                                        <!--begin::Row-->
+                                        <div class="row mb-2">
+                                            <select name="Q10" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+                                                <option></option>
+                                                <option value="Business">Business Leader (Entrepreneur)</option>
+                                                <option value="Community">Community Leader</option>
+                                                <option value="Professional">Professional Leader (C-Suite)</option>
+                                            </select>
+                                        </div>
+                                        <!--end::Row-->
+                                    </div>
+                                    <!--end::Row-->
+                                    <!--begin::Hint-->
+                                    @*<div class="form-text">Customers will see this shortened version of your statement descriptor</div>*@
+                                    <!--end::Hint-->
+                                </div>
+                                <!--end::10-->
+								<!--begin::Q11-->
+								<div class="fv-row mb-10" style="display: none;" id="FQ11_1">
+									<!--begin::Row-->
+									<div class="row mb-2">
+										<!--begin::Input group-->
+										<!--begin::Label-->
+										<span style="font-weight:bold;">QUESTION: </span>
+										<label class="d-flex align-items-center form-label mb-3 required">
+											Do you have any issues/obstacles to grow your business? 
+											<span class="ms-1" data-bs-toggle="tooltip" title="Do you have any issues/obstacles to grow your business? ">
+												<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+													<span class="path1"></span>
+													<span class="path2"></span>
+													<span class="path3"></span>
+												</i>
+											</span>
+										</label>
+										<!--end::Label-->
+										<select name="Q11_1" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+											<option></option>
+											<option value="Yes">Yes</option>
+											<option value="No">No</option>
+										</select>
+									</div>
+									<!--end::Row-->
+								</div>
+                                <div class="fv-row mb-10 " style="display: none;" id="FQ11_1R">
+                                    <!--begin::Label-->
+                                    <span style="font-weight:bold;">QUESTION: </span>
+                                    <label class="d-flex align-items-center form-label mb-3 ">
+                                       Reason
+                                        <span class="ms-1" data-bs-toggle="tooltip" title="In which area of Leadership are you interested in developing yourself?">
+                                            <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                            </i>
+                                        </span>
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Row-->
+                                    <div class="row mb-2" data-kt-buttons="true">
+                                        <!--begin::Row-->
+                                        <div class="row mb-2">
+                                            <select name="Q11_1R" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+                                                <option></option>
+                                                <option value="Financial">Financial constraint</option>
+                                                <option value="Lack">Lack of knowledge of market</option>
+                                                <option value="Absence">Absence of good employees</option>
+                                                <option value="Inflation">Inflation or poor economic condition</option>
+                                                <option value="Unclear">Unclear business strategy</option>
+                                                <option value="Other">Other(s), please state</option>
+                                            </select>
+                                        </div>
+										<!-- Hidden input field for "Other" -->
+										<div class="row mb-2" id="Q11_1RT">
+											<input type="text" name="Q11_1RT" class="form-control form-control-solid" placeholder="Please specify..." />
+										</div>
+
+                                        <!--end::Row-->
+                                    </div>
+                                    <!--end::Row-->
+                                    <!--begin::Hint-->
+                                    @*<div class="form-text">Customers will see this shortened version of your statement descriptor</div>*@
+                                    <!--end::Hint-->
+                                </div>
+								
+								
+								
+								
+								
+								
+								<div class="fv-row mb-10" style="display: none;" id="FQ11_2">
+									<!--begin::Row-->
+									<div class="row mb-2">
+										<!--begin::Input group-->
+										<!--begin::Label-->
+										<span style="font-weight:bold;">QUESTION: </span>
+										<label class="d-flex align-items-center form-label mb-3 required">
+											Do you have any issues/obstacles to climb the corporate ladder? 
+											<span class="ms-1" data-bs-toggle="tooltip" title="Do you have any issues/obstacles to climb the corporate ladder? ">
+												<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+													<span class="path1"></span>
+													<span class="path2"></span>
+													<span class="path3"></span>
+												</i>
+											</span>
+										</label>
+										<!--end::Label-->
+										<select name="Q11_2" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+											<option></option>
+											<option value="Yes">Yes</option>
+											<option value="No">No</option>
+										</select>
+									</div>
+									<!--end::Row-->
+								</div>
+                                <div class="fv-row mb-10 " style="display: none;" id="FQ11_2R">
+                                    <!--begin::Label-->
+                                    <span style="font-weight:bold;">QUESTION: </span>
+                                    <label class="d-flex align-items-center form-label mb-3 ">
+                                       Reason
+                                        <span class="ms-1" data-bs-toggle="tooltip" title="In which area of Leadership are you interested in developing yourself?">
+                                            <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                            </i>
+                                        </span>
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Row-->
+                                    <div class="row mb-2" data-kt-buttons="true">
+                                        <!--begin::Row-->
+                                        <div class="row mb-2">
+                                            <select name="Q11_2R" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+                                                <option></option>
+                                                <option value="Currentt">Current employment has no career pathway</option>
+                                                <option value="Technical">Lack of technical skills</option>
+                                                <option value="Leadership">Lack of leadership skills</option>
+                                                <option value="Poor">Poor soft skills</option>
+                                                <option value="Support">Lack of support from senior management</option>
+                                                <option value="Otherss">Other(s), please state</option>
+                                            </select>
+                                        </div>
+										<!-- Hidden input field for "Other" -->
+										<div class="row mb-2" id="Q11_2RT">
+											<input type="text" name="Q11_2RT" class="form-control form-control-solid" placeholder="Please specify..." />
+										</div>
+
+                                        <!--end::Row-->
+                                    </div>
+                                    <!--end::Row-->
+                                    <!--begin::Hint-->
+                                    @*<div class="form-text">Customers will see this shortened version of your statement descriptor</div>*@
+                                    <!--end::Hint-->
+                                </div>
+								
+								
+								
+								
+								
+								
+								<div class="fv-row mb-10" style="display: none;" id="FQ11_3">
+									<!--begin::Row-->
+									<div class="row mb-2">
+										<!--begin::Input group-->
+										<!--begin::Label-->
+										<span style="font-weight:bold;">QUESTION: </span>
+										<label class="d-flex align-items-center form-label mb-3 required">
+											Do you have any issues/obstacles to help the community uplifting their socio-economics?
+											<span class="ms-1" data-bs-toggle="tooltip" title="Do you have any issues/obstacles to help the community uplifting their socio-economics?">
+												<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+													<span class="path1"></span>
+													<span class="path2"></span>
+													<span class="path3"></span>
+												</i>
+											</span>
+										</label>
+										<!--end::Label-->
+										<select name="Q11_3" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+											<option></option>
+											<option value="Yes">Yes</option>
+											<option value="No">No</option>
+										</select>
+									</div>
+									<!--end::Row-->
+								</div>
+                                <div class="fv-row mb-10 " style="display: none;" id="FQ11_3R">
+                                    <!--begin::Label-->
+                                    <span style="font-weight:bold;">QUESTION: </span>
+                                    <label class="d-flex align-items-center form-label mb-3 ">
+                                       Reason
+                                        <span class="ms-1" data-bs-toggle="tooltip" title="In which area of Leadership are you interested in developing yourself?">
+                                            <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                            </i>
+                                        </span>
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Row-->
+                                    <div class="row mb-2" data-kt-buttons="true">
+                                        <!--begin::Row-->
+                                        <div class="row mb-2">
+                                            <select name="Q11_3R" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+                                                <option></option>
+                                                <option value="Constraint">Financial constraint</option>
+                                                <option value="Leadershipp">Lack of leadership skills</option>
+                                                <option value="Technicall">Lack of technical skills</option>
+                                                <option value="Uncooperative">Uncooperative community</option>
+                                                <option value="Othersss">Other(s), please state</option>
+                                            </select>
+                                        </div>
+										<!-- Hidden input field for "Other" -->
+										<div class="row mb-2" id="Q11_3RT">
+											<input type="text" name="Q11_3RT" class="form-control form-control-solid" placeholder="Please specify..." />
+										</div>
+
+                                        <!--end::Row-->
+                                    </div>
+                                    <!--end::Row-->
+                                    <!--begin::Hint-->
+                                    @*<div class="form-text">Customers will see this shortened version of your statement descriptor</div>*@
+                                    <!--end::Hint-->
+                                </div>
+								<!--end::Q11-->
+                                <!--begin::Q12-->
+                                <div class="mb-10 fv-row">
+                                    <!--begin::Row-->
+                                    <div class="row mb-2" style="display: none;" id="FQ12">
+                                        <!--begin::Input group-->
+                                        <!--begin::Label-->
+                                        <span style="font-weight:bold;">QUESTION: </span>
+                                        <label class="d-flex align-items-center form-label mb-3">
+                                            Please select which type(s) of assistance you are interested in and state the specifics, if any ?
+                                            <span class="ms-1" data-bs-toggle="tooltip" title="Please select which type(s) of assistance you are interested in and state the specifics, if any?">
+                                                <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                    <span class="path3"></span>
+                                                </i>
+                                            </span>
+                                        </label>
+                                        <!--end::Label-->
+                                        <!--begin::Row-->
+                                        <div class="row mb-2" style="display: none;" id="FQ12_1">
+                                            <!--begin:Option-->
+                                            <label class="form-check form-check-custom form-check-warning form-check-solid mb-2">
+                                                <input name="Q12_1" class="form-check-input" type="checkbox" value="Yes" />
+                                                <span class="form-check-label fw-bold text-gray-800 text-hover-warning fs-5">
+                                                   Financial assistance (state the certificate name)
+                                                </span>
+                                            </label>
+                                            <div class="mb-2" style="display: none;" id="FQ12_1R">
+                                                <!--begin::Input-->
+                                                <input type="text" class="form-control form-control-lg form-control-solid" name="Q12_1R" placeholder="State purpose" value="" />
+                                                <!--end::Input-->
+                                            </div>
+                                            <!--end::Option-->
+                                        </div>
+                                        <!--end::Row-->
+                                        <!--begin::Row-->
+                                        <div class="row mb-2" style="display: none;" id="FQ12_2">
+                                            <!--begin:Option-->
+                                            <label class="form-check form-check-custom form-check-warning form-check-solid mb-2">
+                                                <input name="Q12_2" class="form-check-input" type="checkbox" value="Yes" />
+                                                <span class="form-check-label fw-bold text-gray-800 text-hover-warning fs-5">
+                                                    Technical Certificate (state the certificate name)
+                                                </span>
+                                            </label>
+                                            <div class="mb-2" style="display: none;" id="FQ12_2R">
+                                                <!--begin::Input-->
+                                                <input type="text" class="form-control form-control-lg form-control-solid" name="Q12_2R" placeholder="State the certificate name" value="" />
+                                                <!--end::Input-->
+                                            </div>
+                                            <!--end::Option-->
+                                        </div>
+                                        <!--end::Row-->
+                                        <!--begin::Row-->
+                                        <div class="row mb-2" style="display: none;" id="FQ12_3">
+                                            <!--begin:Option-->
+                                            <label class="form-check form-check-custom form-check-warning form-check-solid mb-2">
+                                                <input name="Q12_3" class="form-check-input" type="checkbox" value="Yes" />
+                                                <span class="form-check-label fw-bold text-gray-800 text-hover-warning fs-5">
+                                                    Soft Skills Development (state the certificate name)
+                                                </span>
+                                            </label>
+                                            <div class="mb-2" style="display: none;" id="FQ12_3R">
+                                                <!--begin::Input-->
+                                                <input type="text" class="form-control form-control-lg form-control-solid" name="Q12_3R" placeholder="State the skill" value="" />
+                                                <!--end::Input-->
+                                            </div>
+                                            <!--end::Option-->
+                                        </div>
+                                        <!--end::Row-->
+										<!--begin::Row-->
+                                        <div class="row mb-2" style="display: none;" id="FQ12_4">
+                                            <!--begin:Option-->
+                                            <label class="form-check form-check-custom form-check-warning form-check-solid mb-2">
+                                                <input name="Q12_4" class="form-check-input" type="checkbox" value="Yes" />
+                                                <span class="form-check-label fw-bold text-gray-800 text-hover-warning fs-5">
+                                                    Leadership Skills (state the skill)
+                                                </span>
+                                            </label>
+                                            <div class="mb-2" style="display: none;" id="FQ12_4R">
+                                                <!--begin::Input-->
+                                                <input type="text" class="form-control form-control-lg form-control-solid" name="Q12_4R" placeholder="State the certificate" value="" />
+                                                <!--end::Input-->
+                                            </div>
+                                            <!--end::Option-->
+                                        </div>
+                                        <!--end::Row-->
+										<!--begin::Row-->
+                                        <div class="row mb-2" style="display: none;" id="FQ12_5">
+                                            <!--begin:Option-->
+                                            <label class="form-check form-check-custom form-check-warning form-check-solid mb-2">
+                                                <input name="Q12_5" class="form-check-input" type="checkbox" value="Yes" />
+                                                <span class="form-check-label fw-bold text-gray-800 text-hover-warning fs-5">
+                                                    Networking
+                                                </span>
+                                            </label>
+                                            <div class="mb-2" style="display: none;" id="FQ12_5R">
+                                                <!--begin::Input-->
+                                                <input type="text" class="form-control form-control-lg form-control-solid" name="Q12_5R" placeholder="State the certificate" value="" />
+                                                <!--end::Input-->
+                                            </div>
+                                            <!--end::Option-->
+                                        </div>
+                                        <!--end::Row-->
+                                        <!--begin::Row-->
+                                        <div class="row mb-2" style="display: none;" id="FQ12_6">
+                                            <!--begin:Option-->
+                                            <label class="form-check form-check-custom form-check-warning form-check-solid mb-2">
+                                                <input name="Q12_6" class="form-check-input" type="checkbox" value="Yes" />
+                                                <span class="form-check-label fw-bold text-gray-800 text-hover-warning fs-5">
+                                                    Coaching and Mentoring (state your ideal mentor)
+                                                </span>
+                                            </label>
+                                            <div class="mb-2" style="display: none;" id="FQ12_6R">
+                                                <!--begin::Input-->
+                                                <input type="text" class="form-control form-control-lg form-control-solid" name="Q12_6R" placeholder="State your ideal mentor" value="" />
+                                                <!--end::Input-->
+                                            </div>
+                                            <!--end::Option-->
+                                        </div>
+                                        <!--end::Row-->
+                                    </div>
+                                    <!--end::Row-->
+                                </div>
+                                <!--end::Q12-->
+
+                            </div>
+                            <!--end::Wrapper-->
+                        </div>
+                        <!--end::Step 4-->
+                        <!--begin::Step 5-->
+                        <div class="" data-kt-stepper-element="content">
+                            <!--begin::Wrapper-->
+                            <div class="w-100">
+                                <!--begin::Heading-->
+                                <div class="pb-10 pb-lg-15">
+                                    <!--begin::Title-->
+                                    <h2 class="fw-bold d-flex align-items-center text-gray-900">
+                                        YPX Event
+                                        <span class="ms-1" data-bs-toggle="tooltip" title="YPX event">
+                                            <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                            </i>
+                                        </span>
+                                    </h2>
+                                    <!--end::Title-->
+                                    <!--begin::Notice-->
+                                    <div class="text-muted fw-semibold fs-6">
+                                       We are excited to announce that Yayasan Peneraju will be organizing the Yayasan Peneraju Exchange (YPX), 
+									   a dynamic platform designed to empower and inspire future leaders. YPX aims to bring together a diverse
+									   group of individuals to engage in meaningful discussions, share valuable insights, and foster collaborations
+									   that will drive positive change in our communities. We invite all aspiring leaders to register and be part 
+									   of this transformative experience. Don’t miss this opportunity to connect, learn, and grow with like-minded
+									   individuals. Register now to secure your spot!
+                                    </div>
+                                    <!--end::Notice-->
+                                </div>
+                                <!--end::Heading-->
+                                <!--begin::Q13-->
+                                <div class="fv-row mb-10 ">
+                                    <!--begin::Label-->
+                                    <span style="font-weight:bold;">QUESTION: </span>
+                                    <label class="d-flex align-items-center form-label mb-3 required">
+                                        Are you interested to join YPX ?
+                                        <span class="ms-1" data-bs-toggle="tooltip" title="Are you interested to join YPX ?">
+                                            <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                            </i>
+                                        </span>
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Row-->
+                                    <div class="row mb-2" data-kt-buttons="true">
+                                        <!--begin::Row-->
+                                        <div class="row mb-2">
+                                            <select name="Q13" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+                                                <option></option>
+                                                <option value="Yes">Yes</option>
+                                                <option value="No">No</option>>
+                                            </select>
+                                        </div>
+                                        <!--end::Row-->
+                                    </div>
+                                    <!--end::Row-->
+                                </div>
+                                <!--end::Q13-->
+                                <!-- Begin: Question 14-->
+                                <div class="fv-row mb-10 ">
+                                    <!--begin::Label-->
+                                    <span style="font-weight:bold;">QUESTION: </span>
+                                    <label class="d-flex align-items-center form-label mb-3 required">
+                                        Leadership area interested to join
+                                        <span class="ms-1" data-bs-toggle="tooltip" title="Leadership area interested to join ?">
+                                            <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                            </i>
+                                        </span>
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Row-->
+                                    <div class="row mb-2" data-kt-buttons="true">
+                                        <!--begin::Row-->
+                                        <div class="row mb-2">
+                                            <select name="Q14" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+                                                <option></option>
+                                                <option value="Businesss_leader">Business leader</option>
+                                                <option value="Community_leader">Community leader</option>
+												<option value="Professional">Professional leader (c-suite)</option>
+                                            </select>
+                                        </div>
+                                        <!--end::Row-->
+                                    </div>
+                                    <!--end::Row-->
+                                </div>
+                                <!-- End: Question 14-->
+								<!-- Start: Question 15-->
+								<div class="fv-row mb-10 " style="display: none;" id="FQ15">
+                                    <!--begin::Label-->
+                                    <span style="font-weight:bold;">QUESTION: </span>
+                                    <label class="d-flex align-items-center form-label mb-3 required">
+                                        Location:
+                                        <span class="ms-1" data-bs-toggle="tooltip" title="Location ?">
+                                            <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                            </i>
+                                        </span>
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Row-->
+                                    <div class="row mb-2">
+                                        <!--begin::Row-->
+                                        <div class="row mb-2">
+                                            <select name="Q15" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+                                                <option></option>
+                                                <option value="Klang_Valley">Klang Valley</option>
+                                                <option value="Johor_Bahru">Johor Bahru</option>
+												<option value="Sarawak">Sarawak</option>
+                                            </select>
+                                        </div>
+                                        <!--end::Row-->
+                                    </div>
+                                    <!--end::Row-->
+                                    <!--begin::Hint-->
+                                    @*<div class="form-text">Customers will see this shortened version of your statement descriptor</div>*@
+                                    <!--end::Hint-->
+                                </div>
+								<!-- End: Question 15-->
+								<!-- Start: Question 16-->
+								<div class="fv-row mb-10 " style="display: none;" id="FQ16">
+                                    <!--begin::Label-->
+                                    <span style="font-weight:bold;">QUESTION: </span>
+                                    <label class="d-flex align-items-center form-label mb-3 required">
+                                        Location:
+                                        <span class="ms-1" data-bs-toggle="tooltip" title="Location ?">
+                                            <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                            </i>
+                                        </span>
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Row-->
+                                    <div class="row mb-2">
+                                        <!--begin::Row-->
+                                        <div class="row mb-2">
+                                            <select name="Q16" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+                                                <option></option>
+                                                <option value="Sabah">Sabah</option>
+												<option value="Sarawak">Sarawak</option>
+                                            </select>
+                                        </div>
+                                        <!--end::Row-->
+                                    </div>
+                                    <!--end::Row-->
+                                    <!--begin::Hint-->
+                                    @*<div class="form-text">Customers will see this shortened version of your statement descriptor</div>*@
+                                    <!--end::Hint-->
+                                </div>
+								<!--End: Question 16-->
+								<!--Start: Question 17-->
+								<div class="fv-row mb-10" style="display: none;" id="FQ17">
+                                    <!--begin::Label-->
+                                    <span style="font-weight:bold;">QUESTION: </span>
+                                    <label class="d-flex align-items-center form-label mb-3 required">
+                                        Location:
+                                        <span class="ms-1" data-bs-toggle="tooltip" title="Location ?">
+                                            <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                            </i>
+                                        </span>
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Row-->
+                                    <div class="row mb-2">
+                                        <!--begin::Row-->
+                                        <div class="row mb-2">
+                                            <select name="Q17" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+                                                <option></option>
+                                                <option value="Klang_Valley">Klang Valley</option>
+												<option value="Johor_Bahru">Johor Bahru</option>
+                                            </select>
+                                        </div>
+                                        <!--end::Row-->
+                                    </div>
+                                    <!--end::Row-->
+                                </div>
+								<!--End: Question 17-->
+                            </div>
+                            <!--end::Wrapper-->
+                        </div>
+                        <!--end::Step 5-->
+                        <!--begin::Actions-->
+                        <div class="d-flex flex-stack pt-15">
+                            <div class="mr-2">
+                                <button type="button" class="btn btn-lg btn-light-warning me-3" data-kt-stepper-action="previous">
+                                    <i class="ki-duotone ki-arrow-left fs-4 me-1">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                    </i>Previous
+                                </button>
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-lg btn-success" data-kt-stepper-action="submit">
+                                    <span class="indicator-label">
+                                        Submit
+                                        <i class="ki-duotone ki-arrow-right fs-4 ms-2">
+                                            <span class="path1"></span>
+                                            <span class="path2"></span>
+                                        </i>
+                                    </span>
+                                    <span class="indicator-progress">
+                                        Please wait...
+                                        <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                                    </span>
+                                </button>
+                                <button type="button" class="btn btn-lg btn-warning" data-kt-stepper-action="next">
+                                    Continue
+                                    <i class="ki-duotone ki-arrow-right fs-4 ms-1">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                    </i>
+                                </button>
+                            </div>
+                        </div>
+                        <!--end::Actions-->
+                    }
+                    <!--end::Form-->
+                </div>
+                <!--end::Wrapper-->
+            </div>
+            <!--end::Content-->
+        </div>
+        <!--end::Body-->
+    </div>
+    <!--end::Authentication - Multi-steps-->
+</div>
+<!--end::Root-->
+<!--begin::Javascript-->
+<script>var hostUrl = "assets/";</script>
+<!--begin::Global Javascript Bundle(mandatory for all pages)-->
+<script src="assets/plugins/global/plugins.bundle.js"></script>
+<script src="assets/js/scripts.bundle.js"></script>
+<!--end::Global Javascript Bundle-->
+<!--begin::Custom Javascript(used for this page only)-->
+<script src="assets/js/custom/talentsearch/survey/create-account-custom.js"></script>
+<!--end::Custom Javascript-->
+<!--end::Javascript-->
+
+<style>
+    .stepper.stepper-pills .stepper-item.current .stepper-icon {
+        transition: color .2s ease;
+        background-color: #000000;
+        border: var(--bs-stepper-icon-border-current);
+    }
+
+    .stepper.stepper-pills .stepper-item.completed .stepper-icon .stepper-check, .stepper.stepper-pills .stepper-item.current.mark-completed:last-child .stepper-icon .stepper-check {
+        color: #000000;
+        display: inline-block;
+    }
+
+    .stepper.stepper-pills.stepper-multistep {
+        --bs-stepper-pills-size: 46px;
+        --bs-stepper-icon-border-radius: 9px;
+        --bs-stepper-icon-check-size: 1.25rem;
+        --bs-stepper-icon-bg-color: rgba(0, 0, 0, 0.03);
+        --bs-stepper-icon-bg-color-current: #000000;
+        --bs-stepper-icon-bg-color-completed: rgba(0, 0, 0, 0.03);
+        --bs-stepper-icon-border: 1px dashed rgba(0, 0, 0, 0.3);
+        --bs-stepper-icon-border-current: 0;
+        --bs-stepper-icon-border-completed: 2px dashed rgb(0, 0, 0);
+        --bs-stepper-icon-number-color: var(--bs-white);
+        --bs-stepper-icon-number-color-current: var(--bs-white);
+        --bs-stepper-icon-number-color-completed: var(--bs-white);
+        --bs-stepper-icon-check-color-completed: #000000;
+        --bs-stepper-label-title-opacity: 0.7;
+        --bs-stepper-label-title-opacity-current: 1;
+        --bs-stepper-label-title-opacity-completed: 1;
+        --bs-stepper-label-title-color: var(--bs-white);
+        --bs-stepper-label-title-color-current: var(--bs-white);
+        --bs-stepper-label-title-color-completed: var(--bs-white);
+        --bs-stepper-label-desc-opacity: 0.7;
+        --bs-stepper-label-desc-opacity-current: 0.7;
+        --bs-stepper-label-desc-opacity-completed: 0.7;
+        --bs-stepper-label-desc-color: var(--bs-white);
+        --bs-stepper-label-desc-color-current: var(--bs-white);
+        --bs-stepper-label-desc-color-completed: var(--bs-white);
+        --bs-stepper-line-border: 1px dashed rgba(0, 0, 0, 0.3);
+    }
+
+    .form-check-custom {
+        display: flex;
+        align-items: center;
+        padding-left: inherit;
+        margin: 0;
+    }
+</style>

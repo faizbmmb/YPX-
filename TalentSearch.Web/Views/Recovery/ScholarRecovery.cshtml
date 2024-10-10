@@ -1,0 +1,164 @@
+﻿@* @using TalentSearch.Core.Datawarehouse *@
+@using TalentSearch.Core.Recovery.View
+@using TalentSearch.Web.Models.Configurations
+
+@{
+    ViewData["Title"] = "LOD & SOA";
+    ViewData["TitleHeader"] = "LOD & SOA";
+    ViewData["TitleHeaderIcon"] = "ki-focus";
+    ViewData["SubTitleHeader"] = "Recovery";
+    ViewData["SubTitleCurrent"] = "Scholar Documents";
+    Layout = "_MasterPageHeader";
+
+    issuance_letter _Data = (issuance_letter)@ViewData["UserProfileDetail"];
+}
+
+<style>
+    .form-container {
+        max-width: 50%;
+        /* Adjust the width as needed */
+        margin: 0 auto;
+        /* Centers the container horizontally */
+    }
+</style>
+
+<div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+    <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+        <div class="d-flex align-items-center gap-2 gap-lg-3">
+        </div>
+    </div>
+</div>
+
+<div id="kt_app_content" class="app-content flex-column-fluid">
+    <div id="kt_app_content_container" class="app-container container-xxl">
+        <div class="card">
+            <div class="card-header border-0 py-6">
+                <div class="card-title mb-7">
+                    <h4 class="fw-bold m-0">Personal Details</h4>
+                </div>
+                <div class="row mb-7">
+                    <label class="col-lg-4 fw-semibold text-muted">Full Name</label>
+                    <div class="col-lg-8">
+                        <span class="fw-semibold fs-6 text-gray-800">@_Data.scholar_name</span>
+                    </div>
+                </div>
+                <div class="row mb-7">
+                    <label class="col-lg-4 fw-semibold text-muted">IC Number</label>
+                    <div class="col-lg-8">
+                        <span class="fw-semibold fs-6 text-gray-800">@_Data.scholar_nric</span>
+                    </div>
+                </div>
+                <div class="row mb-7">
+                    <label class="col-lg-4 fw-semibold text-muted">Email</label>
+                    <div class="col-lg-8">
+                        <span class="fw-semibold fs-6 text-gray-800">
+                            @if (@_Data.email != null)
+                            {
+                                @_Data.email
+                            }
+                            else
+                            {
+                                <i class="text-danger">Email not found</i>
+                            }
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body py-8">
+                <div>
+                    <span class="d-inline-block position-relative ms-2">
+                        <span class="d-inline-block mb-2 fs-1 fw-bold">
+                            LOD
+                        </span>
+                        <span
+                            class="d-inline-block position-absolute h-3px bottom-0 end-0 start-0 bg-warning translate rounded"></span>
+                    </span>
+                    <iframe src="assets/storage/dummy.pdf" width="100%" height="600px" style="border: none;"></iframe>
+                </div>
+                <div>
+                    <span class="d-inline-block position-relative ms-2">
+                        <span class="d-inline-block mb-2 fs-1 fw-bold">
+                            SOA
+                        </span>
+                        <span
+                            class="d-inline-block position-absolute h-3px bottom-0 end-0 start-0 bg-warning translate rounded"></span>
+                    </span>
+                    <iframe src="assets/storage/dummy.pdf" width="100%" height="600px" style="border: none;"></iframe>
+                </div>
+                <div class="container form-container mt-5 text-center">
+                    <form id="sendEmail" action="/Recovery/SendEmailtoScholar" method="post">
+                        <input type="hidden" id="fullName" name="FullName" value="@_Data.scholar_name">
+                        <input type="hidden" id="nric" name="NRIC" value="@_Data.scholar_nric">
+                        <input type="hidden" id="email" name="Email" value="elisa.sofia@yayasanpeneraju.com.my">
+                        <input type="hidden" id="link" name="Link" value="http://localhost:5075/Recovery/Scholar/Details?@_Data.unique_id">
+
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input mx-auto" id="agreeCheckbox">
+                            <label class="form-check-label fs-6" for="agreeCheckbox">
+                                I agree to be responsible in releasing these documents to the scholar
+                            </label>
+                        </div>
+                        <button type="button" class="btn btn-primary" id="submitButton" disabled>
+                            <span class="indicator-label">
+                                <i class="bi bi-envelope-paper-fill fs-4 me-2"></i>
+                                Send Email to Scholar
+                            </span>
+                            <span class="indicator-progress">
+                                Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var button = document.querySelector("#submitButton");
+    button.addEventListener("click", function () {
+        button.setAttribute("data-kt-indicator", "on");
+        setTimeout(function () {
+            button.removeAttribute("data-kt-indicator");
+        }, 3000);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const checkbox = document.getElementById('agreeCheckbox');
+        const submitButton = document.getElementById('submitButton');
+
+        checkbox.addEventListener('change', function () {
+            submitButton.disabled = !checkbox.checked;
+        });
+
+        submitButton.addEventListener('click', function () {
+            // Prevent default form submission
+            event.preventDefault();
+
+            // Show loading indicator
+            submitButton.setAttribute("data-kt-indicator", "on");
+
+            // Prepare data for the request
+            const formData = new FormData();
+            formData.append('FullName', document.getElementById('fullName').value);
+            formData.append('NRIC', document.getElementById('nric').value);
+            formData.append('Email', document.getElementById('email').value);
+            formData.append('Link', document.getElementById('link').value);
+
+            fetch('/Recovery/SendEmailtoScholar', {
+                method: 'POST',
+                body: formData,
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    submitButton.removeAttribute("data-kt-indicator");
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    submitButton.removeAttribute("data-kt-indicator");
+                });
+        });
+    });
+
+</script>

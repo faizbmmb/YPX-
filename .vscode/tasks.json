@@ -1,0 +1,12 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "dotnet",
+			"task": "build TalentSearch.Web.API",
+			"file": "C:\\Users\\elisa.sofia\\source\\repos\\TalentSearch\\TalentSearch.Web.API\\TalentSearch.Web.API.csproj",
+			"problemMatcher": [],
+			"label": "dotnet: watch TalentSearch.Web.API"
+		}
+	]
+}

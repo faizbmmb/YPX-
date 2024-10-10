@@ -1,0 +1,35 @@
+﻿@using TalentSearch.Core.Datawarehouse
+@using TalentSearch.Web.Models.Configurations
+
+@{
+	tbl_datawarehouse _Data = (tbl_datawarehouse)@ViewData["UserProfileDetail"];
+}
+
+<div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+	<div class="card-header cursor-pointer">
+		<div class="card-title m-0">
+			<h3 class="fw-bold m-0">Household Details</h3>
+		</div>
+	</div>
+	<div class="card-body p-9">
+		<div class="row mb-7">
+			<label class="col-lg-4 fw-semibold text-muted">Number of Household</label>
+			<div class="col-lg-8">
+				<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.sch_number_of_household</span>
+			</div>
+		</div>
+		<div class="row mb-7">
+			<label class="col-lg-4 fw-semibold text-muted">Number of Household Employed</label>
+			<div class="col-lg-8">
+				<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.sch_number_of_household_emp</span>
+			</div>
+		</div>
+		<div class="row mb-7">
+			<label class="col-lg-4 fw-semibold text-muted">Total Household Income</label>
+			<div class="col-lg-8">
+				<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.sch_total_household_income</span>
+			</div>
+		</div>
+
+	</div>
+</div>

@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "User Profile";
+	ViewData["TitleHeader"] = "Account";
+	ViewData["TitleHeaderIcon"] = "ki-user";
+    ViewData["SubTitleHeader"] = "Talenk Bank";
+    ViewData["SubTitleCurrent"] = "Overview";
+    ViewData["OverviewTab"] = "active";
+    ViewData["ProgrammeTab"] = "";
+    ViewData["CertificationTab"] = "";
+    ViewData["EmploymentTab"] = "";
+    ViewData["EducationTab"] = "";
+    Layout = "_MasterPageHeader";
+}
+<!--begin::Toolbar-->
+<div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+    <!--begin::Toolbar container-->
+    <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+        <!--begin::Page title-->
+        <partial name="_PartialHeader/_AppTitle" />
+        <!--end::Page title-->
+        <!--begin::Actions--> 
+        <div class="d-flex align-items-center gap-2 gap-lg-3">
+            
+        </div>
+        <!--end::Actions-->
+    </div>
+    <!--end::Toolbar container-->
+</div>
+<!--end::Toolbar-->
+<!--begin::Content-->
+<div id="kt_app_content" class="app-content flex-column-fluid">
+    <!--begin::Content container-->
+    <div id="kt_app_content_container" class="app-container container-xxl">
+		<!--begin::Navbar-->
+		<partial name="_Partial/_ScholarNavBar" />
+		<!--end::Navbar-->
+		<!--begin::Overview View-->
+		<partial name="_Partial/_ScholarOverview" />
+		<!--end::overview View-->
+    </div>
+    <!--end::Content container-->
+</div>
+<!--end::Content-->

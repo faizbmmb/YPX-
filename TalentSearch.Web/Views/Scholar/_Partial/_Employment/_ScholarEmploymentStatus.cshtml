@@ -1,0 +1,41 @@
+﻿@using TalentSearch.Core.Datawarehouse
+@using TalentSearch.Web.Models.Configurations
+
+@{
+	tbl_datawarehouse _Data = (tbl_datawarehouse)@ViewData["UserProfileDetail"];
+}
+
+<div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+	<div class="card-header cursor-pointer">
+		<div class="card-title m-0">
+			<h3 class="fw-bold m-0">Employment Status</h3>
+		</div>
+	</div>
+	<div class="card-body p-9">
+		<div class="row mb-7">
+			<label class="col-lg-4 fw-semibold text-muted">Job Position</label>
+			<div class="col-lg-8">
+				<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.sch_jobpost</span>
+			</div>
+		</div>
+		<div class="row mb-7">
+			<label class="col-lg-4 fw-semibold text-muted">Employer Name</label>
+			<div class="col-lg-8">
+				<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.sch_employer</span>
+			</div>
+		</div>
+		<div class="row mb-7">
+			<label class="col-lg-4 fw-semibold text-muted">Employer Location</label>
+			<div class="col-lg-8">
+				<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.sch_location</span>
+			</div>
+		</div>
+		<div class="row mb-7">
+			<label class="col-lg-4 fw-semibold text-muted">Monthly Income</label>
+			<div class="col-lg-8">
+				<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.sch_monthly_income</span>
+			</div>
+		</div>
+
+	</div>
+</div>

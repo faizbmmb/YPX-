@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebHelpers" Version="3.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TalentSearch.Core\TalentSearch.Core.csproj" />
+    <ProjectReference Include="..\TalentSearch.Web.API\TalentSearch.Web.API.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Scholar\_Partial\_Education\" />
+    <Folder Include="Views\Scholar\_Partial\_Certification\" />
+  </ItemGroup>
+
+</Project>

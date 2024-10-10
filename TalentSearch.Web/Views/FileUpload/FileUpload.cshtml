@@ -1,0 +1,82 @@
+﻿@{
+    ViewData["Title"] = "Upload Scholar Affairs";
+    ViewData["TitleHeader"] = "Upload Scholar Affairs";
+    ViewData["TitleHeaderIcon"] = "ki-user";
+    ViewData["SubTitleHeader"] = "Prompt";
+    ViewData["SubTitleCurrent"] = "Upload Scholar Affairs";
+    Layout = "_MasterPageSideBar";
+}
+
+<!--begin::Content-->
+<div id="kt_app_content" class="app-content flex-column-fluid">
+    <!--begin::Content container-->
+    <div id="kt_app_content_container" class="app-container container-fluid">
+        <!--begin::Card-->
+        <div class="card text-center">
+            <!--begin::Card body-->
+            <div class="card-body py-4">
+                <h4 class="card-title">UPLOAD SCHOLAR AFFAIRS</h4>
+                <form method="post" enctype="multipart/form-data" asp-action="FileUpload" class="d-flex flex-column align-items-center">
+                    <div id="upload-icon-container" class="upload-icon-container mb-3">
+                        <i class="bi bi-cloud-upload upload-icon" style="font-size: 70px; color: #007bff;"></i>
+                    </div>
+                    <div class="mb-3">
+                        <input type="file" name="file" id="file-input" class="form-control" style="display:none;" />
+                    </div>
+                    @* <div class="mb-3">
+                        <span id="file-name"></span>
+                    </div> *@
+                    <div class="mb-3">
+                        <input type="submit" value="Upload" class="btn btn-primary" />
+                    </div>
+                    <span class="text-success">
+                        @ViewBag.Message
+                    </span>
+                </form>
+                <p class="mt-3">FILE SUPPORTED (PDF)</p>
+            </div>
+            <!--end::Card body-->
+        </div>
+        <!--end::Card-->
+    </div>
+    <!--end::Content container-->
+</div>
+<!--end::Content-->
+
+<style>
+    .upload-icon-container {
+        width: 500px;
+        height: 300px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: black dashed 2px;
+        cursor: pointer;
+    }
+
+    .upload-icon {
+        font-size: 100px !important;
+        color: #007bff !important;
+    }
+
+    .card-title {
+        margin-bottom: 1rem;
+    }
+
+    #file-name {
+        font-size: 16px;
+        color: #000;
+    }
+</style>
+
+<script>
+    document.getElementById('upload-icon-container').addEventListener('click', function () {
+        document.getElementById('file-input').click();
+    });
+
+    document.getElementById('file-input').addEventListener('change', function () {
+        var fileName = this.files[0].name;
+        document.getElementById('file-name').textContent = fileName;
+    });
+</script>

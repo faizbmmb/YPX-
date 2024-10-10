@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  talentsearch.web.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=5101
+    ports:
+      - "5101"
+

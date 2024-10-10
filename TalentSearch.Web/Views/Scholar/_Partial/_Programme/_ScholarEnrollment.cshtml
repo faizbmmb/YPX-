@@ -1,0 +1,65 @@
+﻿@using TalentSearch.Core.Datawarehouse
+@using TalentSearch.Web.Models.Configurations
+
+@{
+	tbl_datawarehouse _Data = (tbl_datawarehouse)@ViewData["UserProfileDetail"];
+}
+
+<div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+	<div class="card-header cursor-pointer">
+		<div class="card-title m-0">
+			<h3 class="fw-bold m-0">Enrolment</h3>
+		</div>
+	</div>
+	<div class="card-body p-9">
+		<div class="row mb-7">
+			<label class="col-lg-4 fw-semibold text-muted">Enrolment</label>
+			<div class="col-lg-8">
+				<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.enrolment</span>
+			</div>
+		</div>
+		<div class="row mb-7">
+			<label class="col-lg-4 fw-semibold text-muted">Enrolment Status</label>
+			<div class="col-lg-8">
+				<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.sch_prog_status</span>
+			</div>
+		</div>
+		<div class="row mb-7">
+			<label class="col-lg-4 fw-semibold text-muted">Type of Enrollment</label>
+			<div class="col-lg-8">
+				<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.type_of_enrolment</span>
+			</div>
+		</div>
+		<div class="row mb-7">
+			<label class="col-lg-4 fw-semibold text-muted">Contract Start</label>
+			<div class="col-lg-8">
+				<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.contract_start</span>
+			</div>
+		</div>
+		<div class="row mb-7">
+			<label class="col-lg-4 fw-semibold text-muted">Contract End</label>
+			<div class="col-lg-8">
+				<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.contract_end</span>
+			</div>
+		</div>
+		<div class="row mb-7">
+			<label class="col-lg-4 fw-semibold text-muted">Contract Duration</label>
+			<div class="col-lg-8">
+				<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.contract_duration</span>
+			</div>
+		</div>
+		<div class="row mb-7">
+			<label class="col-lg-4 fw-semibold text-muted">Training Duration</label>
+			<div class="col-lg-8">
+				<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.training_duration</span>
+			</div>
+		</div>
+		<div class="row mb-7">
+			<label class="col-lg-4 fw-semibold text-muted">Training Completion</label>
+			<div class="col-lg-8">
+				<span class="fw-semibold fs-6 text-gray-800">@_Data.tbl_Scholar.training_completion</span>
+			</div>
+		</div>
+
+	</div>
+</div>
